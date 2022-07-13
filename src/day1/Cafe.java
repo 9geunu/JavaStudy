@@ -12,9 +12,9 @@ public class Cafe {
         this.storage = storage;
     }
 
-    public void orderCoffee() {
+    public Coffee orderCoffee() {
         CoffeeBean coffeeBean = storage.getCoffeeBean();
-        this.coffeeMachine.getCoffee(coffeeBean);
+        return this.coffeeMachine.getCoffee(coffeeBean);
     }
 
     public static void main(String[] args) {
@@ -22,10 +22,10 @@ public class Cafe {
         cafe.setStorage(new CafeStorage());
         cafe.setCoffeeMachine(new EspressoMachine());
 
-        cafe.orderCoffee();
+        System.out.println(cafe.orderCoffee());
 
         cafe.setStorage(new OtherCafeStorage());
 
-        cafe.orderCoffee();
+        System.out.println(cafe.orderCoffee());
     }
 }
